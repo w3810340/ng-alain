@@ -2,9 +2,9 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
-    "types": [
-      "node"
-    ],
+    "baseUrl": "./",
+    "module": "es2015",
+    "types": ["node"],
     "paths": {
       "@shared": [
         "app/shared"
@@ -13,25 +13,24 @@
         "app/shared/*"
       ],
       "@core": [
-        "app/core"
+        "app/core/"
       ],
       "@core/*": [
         "app/core/*"
       ],
       "@testing": [
-        "testing"
+        "testing/"
       ],
       "@testing/*": [
         "testing/*"
       ],
       "@env": [
-        "environments"
+        "environments/"
       ],
       "@env/*": [
         "environments/*"
       ]
-    },
-    "baseUrl": "./"
+    }
   },
   "exclude": [
     "test.ts",

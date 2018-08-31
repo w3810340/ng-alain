@@ -4,9 +4,12 @@ import * as screenfull from 'screenfull';
 @Component({
   selector: 'header-fullscreen',
   template: `
-  <i class="anticon anticon-{{status ? 'shrink' : 'arrows-alt'}}"></i>
-  {{ status ? '退出全屏' : '全屏' }}
-  `
+    <i class="anticon anticon-{{status ? 'shrink' : 'arrows-alt'}}"></i>
+    {{(status ? 'fullscreen-exit' : 'fullscreen') | translate }}
+  `,
+  host: {
+    '[class.d-block]': 'true',
+  },
 })
 export class HeaderFullScreenComponent {
   status = false;
